@@ -1,0 +1,141 @@
+table {
+    position: relative;
+    margin: 50px auto;
+    border-collapse: collapse;
+
+    &[class]::after {
+        content: "";
+    }
+        
+    &::after { 
+        display: block;
+        position: absolute;
+        background-color: black;
+    }
+
+    &.line1::after {
+        width: 430px;
+        height: 2px;
+        top: 76px;
+        left: 16px;
+    }
+
+    &.line2::after {
+        width: 430px;
+        height: 2px;
+        top: 228px;
+        left: 16px;
+    }
+
+    &.line3::after {
+        width: 430px;
+        height: 2px;
+        top: 383px;
+        left: 16px;
+    }
+
+    &.line4::after {
+        width: 2px;
+        height: 430px;
+        top: 16px;
+        left: 75px;
+    }
+
+    &.line5::after {
+        width: 2px;
+        height: 430px;
+        top: 16px;
+        left: 229px;
+    }
+
+    &.line6::after {
+        width: 2px;
+        height: 430px;
+        top: 16px;
+        left: 383px;
+    }
+
+    &.line7::after {
+        width: 600px;
+        height: 2px;
+        top: 228px;
+        left: -70px;
+        rotate: 45deg;
+    }
+
+    &.line8::after {
+        width: 600px;
+        height: 2px;
+        top: 228px;
+        left: -70px;
+        rotate: -45deg;
+}
+}
+
+td {
+    border: 2px solid #000;
+    width: 150px;
+    height: 150px;
+
+    &:first-child {
+        border-left: none;
+    }
+
+    &:last-child {
+        border-right: none;
+    }
+
+    :first-child>& {
+        border-top: none;
+    }
+
+    :last-child>& {
+        border-bottom: none;
+    }
+}
+
+.cross {
+    position: relative;
+
+    &::before , &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        rotate: 45deg;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &::after {
+        rotate: -45deg;
+    }
+}
+
+.zero {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border: 2px solid black;
+        border-radius: 50%;
+    }
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    
+}
